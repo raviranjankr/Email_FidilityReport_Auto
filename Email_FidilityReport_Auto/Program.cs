@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Net.Mail;
 using System.Collections;
 
-namespace Email_FidilityReport_Auto
+namespace Email_Report_With_Attachment
 {
     class Program
     {
@@ -16,11 +13,11 @@ namespace Email_FidilityReport_Auto
             string recipient = emailID;
             string ccList = emailCC;
             return new EmailProvider().Send("PMAYMIS"
-                    , "pmaymis-mhupa@gov.in"
+                    , "*******@gov.in"
                     , recipient
                     , recipient
                     , recipient
-                    , "PMAYMIS : Report Card regarding Data Compliance and Project Implementation dated " + emailDate
+                    , "MIS : Subject of Email " + emailDate
                     , emailContent
                     , EmailProvider.Format.Html
                     , attachment, ccList, null);
@@ -31,7 +28,7 @@ namespace Email_FidilityReport_Auto
 
             if (DateTime.Now.DayOfWeek.ToString().ToLower() == "monday")
             {
-                LOG.WriteToLog("******** Service Started for sending auto email of fidility report ********");
+                LOG.WriteToLog("******** Service Started for sending auto email ********");
                 try
                 {
                     IMisc x;
@@ -40,7 +37,7 @@ namespace Email_FidilityReport_Auto
                     param = new Hashtable();
                     param.Clear();
                     param.Add("@Status", 0);
-                    DataSet ds = x.GetData("FidilityReport_For_Email", "22", param, 0);
+                    DataSet ds = x.GetData("SP_NAME", "PORT", param, 0);
                     if (ds.Tables.Count == 2)
                     {
                         int stateCode = 0;

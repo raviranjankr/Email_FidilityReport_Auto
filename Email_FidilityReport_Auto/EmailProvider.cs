@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Mail;
 
-namespace Email_FidilityReport_Auto
+namespace Email_Report_With_Attachment
 {
     public class EmailProvider
     {
@@ -28,9 +28,9 @@ namespace Email_FidilityReport_Auto
             string bccList = null
         )
         {
-            string response = string.Empty; //message sent to the client
-            var done = false; //indicates if the Email has been sent or not
-            int retryCount = 0; //number of attempts if SMTP server failed to send
+            string response = string.Empty; 
+            var done = false; 
+            int retryCount = 0; 
             GetMessageContent(
                                 senderName,
                                 senderAddress,
@@ -77,12 +77,12 @@ namespace Email_FidilityReport_Auto
             {
                 Host = SMTP_SERVER,
                 Port = Convert.ToInt32("25"),
-                EnableSsl = false, // false when using for PMAY
+                EnableSsl = false, // false when using mission project
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false
 
             };
-            // smtp.Credentials = new NetworkCredential(SMTP_USER, SMTP_PWD); // comment for PMAY
+            // smtp.Credentials = new NetworkCredential(SMTP_USER, SMTP_PWD); // comment for mission project
         }
    
 

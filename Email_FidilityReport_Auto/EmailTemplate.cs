@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace Email_FidilityReport_Auto
+namespace Email_Report_With_Attachment
 {
     public class EmailTemplate
     {
@@ -39,7 +35,7 @@ namespace Email_FidilityReport_Auto
 
         private void EmailFooter()
         {
-            sbEmailMsg.Append("<br/><br/><br/><br/><b>Thanks & Regards</b>,<br/> Pradhan Mantri Awas Yojana(PMAY) Housing for All(Urban),<br/> Ministry of Housing and Urban Affairs,<br/> Government of India</body></html>");
+            sbEmailMsg.Append("<br/><br/><br/><br/><b>Thanks & Regards</b>,<br/> Organization Name,<br/> Organizational Body</body></html>");
         }
         #endregion
     }

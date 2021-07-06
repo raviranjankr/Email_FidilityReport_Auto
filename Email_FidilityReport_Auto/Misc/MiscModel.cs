@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-
-namespace Email_FidilityReport_Auto
+﻿namespace Email_Report_With_Attachment
 {
     public class MiscModel
     {
