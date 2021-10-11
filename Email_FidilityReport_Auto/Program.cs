@@ -25,7 +25,7 @@ namespace Email_Report_With_Attachment
         static void Main(string[] args)
         {
             StringBuilder strLOG = new StringBuilder();
-
+            // send email to all registered member on every monday 
             if (DateTime.Now.DayOfWeek.ToString().ToLower() == "monday")
             {
                 LOG.WriteToLog("******** Service Started for sending auto email ********");
